@@ -1,0 +1,9 @@
+1 - Descompacte a pasta para qualquer repositório.
+2 - Certifique-se que há um arquivo "entrada.txt" dentro da pasta, se não houver, crie um.
+3 - Depois que tiver sorteado a lista de inscritos, copie e cole para o "entrada.txt" e salve.
+4 - Execute o "EvoScrip.exe".
+5 - Depois de executado, ele criará um arquivo "chaveamento.txt", abra-o e copie seu conteúdo.
+6 - Na página de edição do evento da Evo, aperte Ctrl + A para selecionar todo o conteúdo de chaves.
+7 - Cole o conteúdo do "chaveamento.txt" por cima.
+8 - Salve.
+
