@@ -2,21 +2,21 @@
 # Evo Bracket Sort Script created by Jony Walker.
 # Script ordenador de chaves da Evo feito por Jony Walker.
 
-arq = open('entrada.txt', 'r')         #Abre e le um arquivo txt, depois salva em arq.
-lista = arq.readlines()                 #Le todas as linhas salvas em arq e salva na memória virtual de lista
-arq = open('chaveamento.txt', 'w')      #Abre ou cria um arquivo txt para ser escrito
-qtdLinha = 0
-nome = []
+file = open('entrada.txt', 'r')      #Abre e le um arquivo txt.
+lista = file.readlines()             #Le todas as linhas salvas em file e salva na memória virtual de lista.
+file = open('chaveamento.txt', 'w')  #Abre ou cria um arquivo txt para ser escrito.
+number_of_lines = 0
+name = []
                 
-for linha in lista:                     #Iteracao.
-        if linha != "\n":               #Se a linha nao for vazia, continue.
-                qtdLinha =+ qtdLinha    #Contador
-                nome.append(linha)      #Adiciona cada linha a cada iteracao ao vetor 'nome'
+for line in lista:                  #Iteracao.
+        if line != "\n":            #Se a line nao for vazia, continue.
+                number_of_lines += 1 #Contador.
+                name.append(line)   #Adiciona cada linha a cada iteracao ao vetor 'name'.
 
-if (qtdLinha <= 16):                      #Se quantidade de inscritos for menor ou igual a 16, imprima chave para 8 confrontos.
-        while (qtdLinha < 16):
-                nome.append("ninguem")
-                qtdLinha =+ qtdLinha
+if (number_of_lines <= 16): #Se quantidade de inscritos for menor ou igual a 16, imprima chave para 8 confrontos.
+        while (number_of_lines < 16):
+                name.append("ninguem")
+                number_of_lines += 1
         chaves ="""[fase]
 [luta=A | player1=%s | player2=%s | resultado_p1=? | resultado_p2=?]
 [luta=B | player1=%s | player2=%s | resultado_p1=? | resultado_p2=?]
@@ -39,12 +39,12 @@ if (qtdLinha <= 16):                      #Se quantidade de inscritos for menor 
 [/fase]
 [fase]
 [luta=X | player1=1 | player2=2 | resultado_p1=? | resultado_p2=?]
-[/fase]""" % (nome[0], nome[1], nome[2], nome[3], nome[4], nome[5], nome[6], nome[7], nome[8], nome[9], nome[10], nome[11], nome[12], nome[13], nome[14], nome[15])
-        arq.write(chaves)
-elif (16 < qtdLinha <= 32):             #Se quantidade de inscritos for maior que 16 e menor ou igual a 32, imprima chave para 16 confrontos.
-        while (qtdLinha < 32):
-                nome.append("ninguem")
-                qtdLinha = qtdLinha+1
+[/fase]""" % (name[0], name[1], name[2], name[3], name[4], name[5], name[6], name[7], name[8], name[9], name[10], name[11], name[12], name[13], name[14], name[15])
+        file.write(chaves)
+elif (16 < number_of_lines <= 32):             #Se quantidade de inscritos for maior que 16 e menor ou igual a 32, imprima chave para 16 confrontos.
+        while (number_of_lines < 32):
+                name.append("ninguem")
+                number_of_lines += 1
         chaves ="""[fase]
 [luta=I | player1=%s | player2=%s | resultado_p1=? | resultado_p2=?]
 [luta=II | player1=%s | player2=%s | resultado_p1=? | resultado_p2=?]
@@ -85,14 +85,14 @@ elif (16 < qtdLinha <= 32):             #Se quantidade de inscritos for maior qu
 [/fase]
 [fase]
 [luta=A | player1=1 | player2=2 | resultado_p1=? | resultado_p2=?]
-[/fase]""" % (nome[0], nome[1], nome[2], nome[3], nome[4], nome[5], nome[6], nome[7], nome[8], nome[9], nome[10], nome[11], nome[12], nome[13], nome[14], nome[15],
-              nome[16], nome[17], nome[18], nome[19], nome[20], nome[21], nome[22], nome[23], nome[24], nome[25], nome[26], nome[27], nome[28], nome[29], nome[30],
-              nome[31])
-        arq.write(chaves)
+[/fase]""" % (name[0], name[1], name[2], name[3], name[4], name[5], name[6], name[7], name[8], name[9], name[10], name[11], name[12], name[13], name[14], name[15],
+              name[16], name[17], name[18], name[19], name[20], name[21], name[22], name[23], name[24], name[25], name[26], name[27], name[28], name[29], name[30],
+              name[31])
+        file.write(chaves)
 else:                                   #Se quantidade de inscritos for maior do que 32, imprima chave para 32 confrontos.
-        while (qtdLinha < 64):
-                nome.append("ninguem")
-                qtdLinha = qtdLinha+1
+        while (number_of_lines < 64):
+                name.append("ninguem")
+                number_of_lines += 1
         chaves ="""[fase]
 [luta=1 | player1=%s | player2=%s | resultado_p1=? | resultado_p2=?]
 [luta=2 | player1=%s | player2=%s | resultado_p1=? | resultado_p2=?]
@@ -167,10 +167,10 @@ else:                                   #Se quantidade de inscritos for maior do
 [/fase]
 [fase]
 [luta=A | player1=1 | player2=2 | resultado_p1=? | resultado_p2=?]
-[/fase]""" % (nome[0], nome[1], nome[2], nome[3], nome[4], nome[5], nome[6], nome[7], nome[8], nome[9], nome[10], nome[11], nome[12], nome[13], nome[14], nome[15],
-              nome[16], nome[17], nome[18], nome[19], nome[20], nome[21], nome[22], nome[23], nome[24], nome[25], nome[26], nome[27], nome[28], nome[29], nome[30],
-              nome[31], nome[32], nome[33], nome[34], nome[35], nome[36], nome[37], nome[38], nome[39], nome[40], nome[41], nome[42], nome[43], nome[44], nome[45],
-              nome[46], nome[47], nome[48], nome[49], nome[50], nome[51], nome[52], nome[53], nome[54], nome[55], nome[56], nome[57], nome[58], nome[59], nome[60],
-              nome[61], nome[62], nome[63])
-        arq.write(chaves)
-arq.close()
+[/fase]""" % (name[0], name[1], name[2], name[3], name[4], name[5], name[6], name[7], name[8], name[9], name[10], name[11], name[12], name[13], name[14], name[15],
+              name[16], name[17], name[18], name[19], name[20], name[21], name[22], name[23], name[24], name[25], name[26], name[27], name[28], name[29], name[30],
+              name[31], name[32], name[33], name[34], name[35], name[36], name[37], name[38], name[39], name[40], name[41], name[42], name[43], name[44], name[45],
+              name[46], name[47], name[48], name[49], name[50], name[51], name[52], name[53], name[54], name[55], name[56], name[57], name[58], name[59], name[60],
+              name[61], name[62], name[63])
+        file.write(chaves)
+file.close()
